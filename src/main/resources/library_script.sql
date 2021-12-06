@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS library;
+USE library;
+
+DROP TABLE IF EXISTS book;
+DROP TABLE IF EXISTS author;
+
+
+CREATE TABLE author(
+id INT NOT NULL AUTO_INCREMENT,
+author_name VARCHAR(45) NOT NULL,
+birth_date DATE NOT NULL,
+phone VARCHAR(15) NOT NULL,
+email VARCHAR(45) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE book(
+id INT NOT NULL AUTO_INCREMENT,
+book_name VARCHAR(45),
+author_id INT NOT NULL,
+published_amount INT NOT NULL,
+sold_amount INT NOT NULL,
+PRIMARY KEY(id),
+CONSTRAINT book_author_fk
+FOREIGN KEY (author_id)
+REFERENCES author(id)
+);
