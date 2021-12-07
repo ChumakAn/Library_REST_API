@@ -8,7 +8,8 @@ This application is made via MVC pattern
 + Additional endpoints that extend functionality
 + Service layer with transfering entities to DTO
 + Controller with simple input validation
---- 
+
+
 ## Endpoints 
 - create/update/delete book
 - create/update/delete author
