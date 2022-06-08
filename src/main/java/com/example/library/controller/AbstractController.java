@@ -17,7 +17,7 @@ public abstract class AbstractController<T, DTO, ID> {
 
     protected abstract AbstractMapper<T, DTO> getMapper();
 
-
+    @CrossOrigin(origins = "https://java.lviv.education")
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     ResponseEntity<List<DTO>> getAll() {
@@ -29,6 +29,7 @@ public abstract class AbstractController<T, DTO, ID> {
 
     }
 
+    @CrossOrigin(origins = "https://java.lviv.education")
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public @ResponseBody
     ResponseEntity<DTO> getById(@PathVariable ID id) {
@@ -40,6 +41,7 @@ public abstract class AbstractController<T, DTO, ID> {
         }
     }
 
+    @CrossOrigin(origins = "https://java.lviv.education")
     @RequestMapping(method = RequestMethod.POST,
             consumes = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody
@@ -48,6 +50,7 @@ public abstract class AbstractController<T, DTO, ID> {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "https://java.lviv.education")
     @RequestMapping(method = RequestMethod.PUT,
             value = "/{id}",
             consumes = {MediaType.APPLICATION_JSON_VALUE})
@@ -61,6 +64,7 @@ public abstract class AbstractController<T, DTO, ID> {
         }
     }
 
+    @CrossOrigin(origins = "https://java.lviv.education")
     @RequestMapping(method = RequestMethod.DELETE,
             value = "/{id}")
     public ResponseEntity<?> deleteById(@PathVariable ID id) {
