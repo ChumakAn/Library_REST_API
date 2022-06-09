@@ -36,7 +36,6 @@ public class SwaggerConfig {
     @Bean
     public Docket decksApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-	.host("java.lviv.education")
 	.apiInfo(apiInfo())
 	.pathMapping("/").select()
         .paths(Predicates.not(PathSelectors.regex("/error.*")))
